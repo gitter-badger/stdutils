@@ -1,0 +1,13 @@
+                                           Utilities
+This is an attempt at writing standard POSIX comformant utilities.
+
+The goal is to be as conformant as possible with the POSIX(2008) standards.
+In the implementation only POSIX library functions should be used (no GNU extensions).
+
+
+
+Not asking for contributions, just implementing things slowly for fun on my own time.
+
+
+
+2-Clause BSD License, copy is in LICENSE.
