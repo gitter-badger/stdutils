@@ -1,4 +1,4 @@
-                                           Utilities
+                                 Utilities
 This is an attempt at writing standard POSIX comformant utilities.
 
 The goal is to be as conformant as possible with the POSIX(2008) standards.
