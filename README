@@ -7,7 +7,9 @@ In the implementation only POSIX library functions should be used (no GNU extens
 
 
 Not asking for contributions, just implementing things slowly for fun on my own time.
-
+Currently the following utilities are implemented: (not necessarily to perfection)
+	pwd
+	cat
 
 
 2-Clause BSD License, copy is in LICENSE.

@@ -86,7 +86,8 @@ void usage(char *name)
 		"Usage: %s [-L|-P]\n"
 		"Return name of working directory\n"
 		"Following is a list of currently supported options.\n"
-		
+		"\t-L\tLogical path, includes symlinks, default option.\n"
+		"\t-P\tPhysical path, ignores symlinks.\n"	
 		"\t-h\tDisplay this help/usage screen.\n"
 		,
 		name
