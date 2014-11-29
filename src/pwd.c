@@ -13,7 +13,7 @@
 #include <errno.h>
 #include <stdlib.h>
 void usage(char *name);
-int pwd();
+int pwd(size_t);
 int main(int argc, char *argv[])
 {
 	int o;
