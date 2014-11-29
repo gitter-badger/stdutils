@@ -14,13 +14,14 @@
 #include <stdlib.h>
 void usage(char *name);
 int pwd(size_t);
+void version();
 int main(int argc, char *argv[])
 {
 	int o;
 	/* If this value is 0 there has been no option or the -L option selected
 		If greater than 0 -P has been selected */
 	int LP = 0;
-	while ((o = getopt(argc, argv, "hLP")) != -1) {
+	while ((o = getopt(argc, argv, "hvLP")) != -1) {
 		switch (o) {
 			case 'L':
 				LP = 0;		
@@ -28,6 +29,9 @@ int main(int argc, char *argv[])
 			case 'P':
 				LP++;
 			break;
+			case 'v':
+				version();
+			return 0;
 			case 'h':
 				usage(argv[0]);
 				return 0;
@@ -89,7 +93,21 @@ void usage(char *name)
 		"\t-L\tLogical path, includes symlinks, default option.\n"
 		"\t-P\tPhysical path, ignores symlinks.\n"	
 		"\t-h\tDisplay this help/usage screen.\n"
+		"\t-v\tDisplay version information.\n"
 		,
 		name
+	);
+}
+/*
+ * Displays version information
+*/
+void version()
+{
+	printf(
+		"pwd (stdutils)\n"
+		"Copyright (C) 2014 Alan Potteiger\n"
+		"Licensed under the 2-Clause BSD License\n\n"
+		"Written by Alan Potteiger\n"
+		"https://github.com/APott/stdutils\n"
 	);
 }

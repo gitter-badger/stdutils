@@ -16,10 +16,11 @@
 #include <sys/stat.h>
 void output_file(FILE*);
 void usage(char*);
+void version();
 int main(int argc, char *argv[])
 {
 	int o;
-	while ((o = getopt(argc, argv, "hu")) != -1) {
+	while ((o = getopt(argc, argv, "huv")) != -1) {
 		switch (o) {
 			case 'u':
 				/* From reading the spec if appears that this option doesn't
@@ -27,6 +28,9 @@ int main(int argc, char *argv[])
 			break;
 			case 'h':
 				usage(argv[0]);
+			return 0;
+			case 'v':
+				version();
 			return 0;
 			case '?':
 				usage(argv[0]);
@@ -88,8 +92,22 @@ void usage(char *name)
 		"Following is a list of valid options.\n"
 		"\t-u\tIgnored, normal execution.\n"
 		"\t-h\tDisplays this help/usage screen.\n"
+		"\t-v\tDisplays version information.\n"
 		"Just \"-\" will read from standard input, Ctrl+D signifies end of file.\n"
 		,
 		name
+	);
+}
+/*
+ * Displays version information
+*/
+void version()
+{
+	printf(
+		"cat (stdutils)\n"
+		"Copyright (C) 2014 Alan Potteiger\n"
+		"Licensed under the 2-Clause BSD License\n\n"
+		"Written by Alan Potteiger\n"
+		"https://github.com/APott/stdutils\n"
 	);
 }
