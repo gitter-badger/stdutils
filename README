@@ -1,4 +1,4 @@
-                                 Utilities
+                                  stdutils
 This is an attempt at writing standard POSIX comformant utilities.
 
 The goal is to be as conformant as possible with the POSIX(2008) standards.
@@ -8,6 +8,7 @@ In the implementation only POSIX library functions should be used (no GNU extens
 
 Not asking for contributions, just implementing things slowly for fun on my own time.
 Currently the following utilities are implemented: (not necessarily to perfection)
+
 	pwd
 	cat
 

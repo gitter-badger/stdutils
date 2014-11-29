@@ -12,6 +12,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 void output_file(FILE*);
 void usage(char*);
 int main(int argc, char *argv[])
@@ -35,9 +37,13 @@ int main(int argc, char *argv[])
 	for (i = optind; i < argc; i++) {
 		if (strcmp(argv[i], "-") != 0) {
 			FILE *file;
-			file = fopen(argv[i], "r");
-			if (file != NULL) {
-				output_file(file);
+			if ((file = fopen(argv[i], "r")) != NULL) {
+				struct stat statbuf;
+				stat(argv[i], &statbuf);
+				if (!S_ISDIR(statbuf.st_mode))
+					output_file(file);
+				else
+					fprintf(stderr, "Error: Specified file (%s) is a directory.\n", argv[i]);
 			} else {
 				switch (errno) {
 					case EISDIR:
