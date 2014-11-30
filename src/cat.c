@@ -20,7 +20,7 @@ void version();
 int main(int argc, char *argv[])
 {
 	int o;
-	while ((o = getopt(argc, argv, "huv")) != -1) {
+	while ((o = getopt(argc, argv, "?huV")) != -1) {
 		switch (o) {
 			case 'u':
 				/* From reading the spec if appears that this option doesn't
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			case 'h':
 				usage(argv[0]);
 			return 0;
-			case 'v':
+			case 'V':
 				version();
 			return 0;
 			case '?':
@@ -80,9 +80,9 @@ void usage(char *name)
 		"Usage: %s [-u] [file...]\n"
 		"Concatenate and print files (including standard input)\n"
 		"Following is a list of valid options.\n"
+		"\t-h, -?\tDisplays this help/usage screen.\n"
 		"\t-u\tIgnored, normal execution.\n"
-		"\t-h\tDisplays this help/usage screen.\n"
-		"\t-v\tDisplays version information.\n"
+		"\t-V\tDisplays version information.\n"
 		"Just \"-\" will read from standard input, Ctrl+D signifies end of file.\n"
 		,
 		name
