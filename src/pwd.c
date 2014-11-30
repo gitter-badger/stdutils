@@ -12,11 +12,15 @@
 #include <limits.h>
 #include <errno.h>
 #include <stdlib.h>
-void usage(char *name);
+#include <string.h>
+void usage();
 int pwd(size_t);
 void version();
+/* Under what name the program was execeuted. ex. `pwd`, `bin/pwd` */
+static char *called;
 int main(int argc, char *argv[])
 {
+	called = argv[0];
 	int o;
 	/* If this value is 0 there has been no option or the -L option selected
 		If greater than 0 -P has been selected */
@@ -33,11 +37,11 @@ int main(int argc, char *argv[])
 				version();
 			return 0;
 			case 'h':
-				usage(argv[0]);
+				usage();
 				return 0;
 			break;
 			case '?':
-				usage(argv[0]);
+				usage();
 				return 0;
 		}
 	}
@@ -63,7 +67,7 @@ int pwd(size_t length)
 		return 0;
 	}
 	/* We haven't returned yet, so something went wrong */
-	
+	/* Check for any recoverable errors, try to fix them */
 	switch (errno) {
 		case EINVAL:
 			free(buf);
@@ -71,20 +75,16 @@ int pwd(size_t length)
 		case ERANGE:
 			free(buf);
 		return pwd(length*2);
-		case EACCES:
-			fprintf(stderr, "Permission denied.");
-			free(buf);
-		return 1;
-		case ENOMEM:
-			fprintf(stderr, "No memory.");
-			free(buf);
-		return 1;
 	}
+	/* Couldn't recover, free memory, print message, and return. */
+	free(buf);
+	perror(strcat(called, ": Error"));
+	return 1;
 }
 /*
  * Print usage of `pwd` to standard out.
 */
-void usage(char *name)
+void usage()
 {
 	printf(
 		"Usage: %s [-L|-P]\n"
@@ -95,7 +95,7 @@ void usage(char *name)
 		"\t-h\tDisplay this help/usage screen.\n"
 		"\t-v\tDisplay version information.\n"
 		,
-		name
+		called
 	);
 }
 /*

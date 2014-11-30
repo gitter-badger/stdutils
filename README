@@ -11,6 +11,7 @@ Currently the following utilities are implemented: (not necessarily to perfectio
 
 	pwd
 	cat
+	chmod: Not up to standard yet, use of octal modes and -R work fine, still need to parse symbolic modes, just lazy atm.
 
 
 2-Clause BSD License, copy is in LICENSE.

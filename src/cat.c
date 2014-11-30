@@ -49,17 +49,7 @@ int main(int argc, char *argv[])
 				else
 					fprintf(stderr, "Error: Specified file (%s) is a directory.\n", argv[i]);
 			} else {
-				switch (errno) {
-					case EISDIR:
-						fprintf(stderr, "Error: Specified file (%s) is a directory.", argv[i]);
-					break;
-					case ELOOP:
-						fprintf(stderr, "Error: A loop exists in symbolic links, trying to open: %s", argv[i]);
-					break;
-					case EACCES:
-						fprintf(stderr, "Error: Permission denied. Trying to open: %s", argv[i]);
-					break;
-				}
+				perror(strcat(argv[0], ": Error"));
 			}
 			continue;		
 		}
