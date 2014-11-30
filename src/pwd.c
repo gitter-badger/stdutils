@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	/* If this value is 0 there has been no option or the -L option selected
 		If greater than 0 -P has been selected */
 	int LP = 0;
-	while ((o = getopt(argc, argv, "hvLP")) != -1) {
+	while ((o = getopt(argc, argv, "?hVLP")) != -1) {
 		switch (o) {
 			case 'L':
 				LP = 0;		
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			case 'P':
 				LP++;
 			break;
-			case 'v':
+			case 'V':
 				version();
 			return 0;
 			case 'h':
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 			break;
 			case '?':
 				usage();
-				return 0;
+			return 0;
 		}
 	}
 	if (LP > 0) {
@@ -92,8 +92,8 @@ void usage()
 		"Following is a list of currently supported options.\n"
 		"\t-L\tLogical path, includes symlinks, default option.\n"
 		"\t-P\tPhysical path, ignores symlinks.\n"	
-		"\t-h\tDisplay this help/usage screen.\n"
-		"\t-v\tDisplay version information.\n"
+		"\t-h, -?\tDisplay this help/usage screen.\n"
+		"\t-V\tDisplay version information.\n"
 		,
 		called
 	);
