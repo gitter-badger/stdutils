@@ -27,12 +27,12 @@ int main(int argc, char *argv[])
 	called = argv[0];
 	int o;
 	int R = 0;
-	while ((o = getopt(argc, argv, "hvR")) != -1) {
+	while ((o = getopt(argc, argv, "?hVR")) != -1) {
 		switch (o) {
 			case 'R':
 				R++;
 			break;
-			case 'v':
+			case 'V':
 				version();
 			return 0;
 			case 'h':
@@ -133,10 +133,10 @@ void usage()
 	printf(
 		"Usage: %s [-R] mode file...\n"
 		"Changes file modes (permissions)\n"
-		"Following is a list of options."
+		"Following is a list of options.\n"
 		"\t-R\tChanges file mode bits (permissions) recursively, all files and directories below.\n"
-		"\t-h\tDisplay this help/usage screen.\n"
-		"\t-v\tDisplay version information.\n"
+		"\t-h, -?\tDisplay this help/usage screen.\n"
+		"\t-V\tDisplay version information.\n"
 		,
 		called
 	);
