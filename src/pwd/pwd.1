@@ -1,0 +1,33 @@
+.TH pwd 1 "December 2014" "stdutils 0.1.1" "User Command"
+.SH NAME
+pwd - Prints working directory
+.SH SYNOPSIS
+.B pwd
+.R [-L|-P]
+
+.SH DESCRIPTION
+The
+.B pwd
+.R utility prints the absolute pathname to the current working directory.
+
+.SH OPTIONS
+There are currently four options supported by this implementation of pwd:
+.IP -L
+Print the logical path from the environment, includes symlinks (default).
+.IP -P
+Print the physical path, ignores symlinks.
+.IP -h
+Print a help/usage screen listing these options.
+.IP -?
+Same as
+.B -h
+.IP -V
+Prints version information.
+.SH ENVIRONMENT VARIABLES
+.IP PWD
+Provides an absolute pathname of the current working directory,
+.B -L
+makes use of it.
+
+.SH AUTHOR
+Alan Potteiger <alanpotteiger@gmail.com>
