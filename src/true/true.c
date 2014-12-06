@@ -1,40 +1,27 @@
-#!/bin/sh
-# Script to write a template for a new utility by only providing a name (I'm lazy)
-# ./new.sh [UTILITY] [AUTHORS] 
-
-# New directory for new utility
-mkdir src/$1
-# touch for a manpage later
-touch src/$1/$1.1
-# write out the template to ../src/$1/$1.c
-echo \
-"\
 /*
- * Written by $2
+ * Written by Planet Earth
  *
  * Licensed under the 2-Clause BSD License
  * See LICENSE in the root of the project
  * 
- * $1.c - 
+ * true.c - 
  * 
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include \"../info.h\"
-#define AUTHORS \"$2\"
-#define UTILITY \"$1\"
+#include "../info.h"
+#define AUTHORS "Planet Earth"
+#define UTILITY "true"
 void usage();
 void version();
 /* Under what name the program was executed */
 static char *called;
-
 int main(int argc, char *argv[])
 {
 	called = argv[0];
 	int o;
-	while ((o = getopt(argc, argv, \"?hV\")) != -1) {
+	while ((o = getopt(argc, argv, "?hV")) != -1) {
 		switch (o) {
-			
 			case 'V':
 				version();
 			return EXIT_SUCCESS;
@@ -44,17 +31,20 @@ int main(int argc, char *argv[])
 			return EXIT_SUCCESS;
 		}
 	}
-	
 	return EXIT_SUCCESS;
 }
-
 /*
- * Print usage of \`$1\` to standard out.
+ * Print usage of `true` to standard out.
 */
 void usage()
 {
 	printf(
-		\"Usage: %s \\\n\"
+		"Usage: %s [option]\n"
+		"Simply returns true (0).\n"
+		"Following are the two valid options.\n"
+		"\t-?, -h\tDisplay this help/usage page.\n"
+		"\t-V\tDisplay version information.\n"
+		"Written by Planet Earth.\n"
 		,
 		called
 	);
@@ -65,10 +55,10 @@ void usage()
 void version()
 {
 	printf(
-		\"%s (stdutils %s)\\\n\"
-		\"Written by %s\\\n\"
-		\"Licensed under the 2-Clause BSD License\\\n\"
-		\"%s\\\n\"
+		"%s (stdutils %s)\n"
+		"Written by %s\n"
+		"Licensed under the 2-Clause BSD License\n"
+		"%s\n"
 		,
 		UTILITY,
 		VERSION,
@@ -76,4 +66,4 @@ void version()
 		HOMEPAGE
 	);
 }
-" > src/$1/$1.c
+
