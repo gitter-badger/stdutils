@@ -1,0 +1,38 @@
+.TH cat 1 "December 2014" "stdutils 0.1.1" "User Command"
+.SH NAME
+cat - Concatenate and print files (including standard input)
+.SH SYNOPSIS
+.B cat
+.R [-u] [file...]
+
+.SH DESCRIPTION
+The
+.B cat
+.R utility concatenates data from specified files and outputs it to stdout. Data may come from files or stdin, in both cases it reads to End Of File,
+this can be represented with
+.B Ctrl+D if from stdin.
+.SH OPTIONS
+There are currently four options supported by this implementation of pwd:
+.IP -u
+Ignored option,
+.B cat
+proceeds with standard execution.
+.IP -h
+Print a help/usage screen listing these options.
+.IP -?
+Same as
+.B -h
+.IP -V
+Prints version information.
+.SH EXAMPLES
+.TP
+cat \- main.c
+Prints input from stdin to stdout then prints the contents of main.c to stdout.
+.TP
+cat main.c \-
+Prints the contents of main.c to stdout, then input from stdin to stdout.
+.TP
+cat
+Prints input from stdin to stdout.
+.SH AUTHOR
+Alan Potteiger <alanpotteiger@gmail.com>

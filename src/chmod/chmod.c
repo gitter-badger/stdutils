@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2014 Alan Potteiger
+ * Written by Alan Potteiger
  *
- * Licensed under the 2 Clause (Free)BSD License
- * License can be found in `LICENSE` in the root directory of this project
- *
- * chmod.c - Implementation of the `chmod` utility
- *
+ * Licensed under the 2-Clause BSD License
+ * See LICENSE in the root of the project
+ * 
+ * chmod.c - Implementation of the `chmod` utility.
+ * 
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,13 +15,15 @@
 #include <stdbool.h>
 #include <unistd.h>
 #include <dirent.h>
-#include "../version.h"
-void usage();
-void version();
+#include "../info.h"
+#define AUTHORS "Alan Potteiger"
+#define UTILITY "chmod"
+#define ERROR(x) fprintf(stderr, "%s: Error: %s\n", called, (x));
 bool is_octal(char*);
 void update_mode(char*, long int, int);
-#define ERROR(x) fprintf(stderr, "%s: Error: %s\n", called, (x));
-/* Under what name the program was executed ex. `chmod`, `bin/chmod`  */
+void usage();
+void version();
+/* Under what name the program was executed */
 static char *called;
 int main(int argc, char *argv[])
 {
@@ -35,13 +37,11 @@ int main(int argc, char *argv[])
 			break;
 			case 'V':
 				version();
-			return 0;
+			return EXIT_SUCCESS;
 			case 'h':
-				usage();
-			return 0;
 			case '?':
 				usage();
-			return 0;
+			return EXIT_SUCCESS;
 		}
 	}
 	/* Argument checks, need at least 2 (orther than -R) */
@@ -49,12 +49,12 @@ int main(int argc, char *argv[])
 	if (dif < 1) {
 		ERROR("Missing mode and file arguments.");
 		usage();
-		return 0;
+		return EXIT_SUCCESS;
 	}
 	if (dif < 2) {
 		ERROR("Missing file argument(s).");
 		usage();
-		return 0;
+		return EXIT_SUCCESS;
 	}
 	/* We have everything we need, now we just need to verify
 		if it's in the correct format */
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 		}
 		
 	}
-	return 0;	
+	return EXIT_SUCCESS;
 }
 /*
  * Updates the mode for the specified file
@@ -127,13 +127,12 @@ bool is_octal(char* s)
 	return true;
 }
 /*
- * Print help/usage to the screen
+ * Print usage of `chmod` to standard out.
 */
 void usage()
 {
 	printf(
 		"Usage: %s [-R] mode file...\n"
-		"Changes file modes (permissions)\n"
 		"Following is a list of options.\n"
 		"\t-R\tChanges file mode bits (permissions) recursively, all files and directories below.\n"
 		"\t-h, -?\tDisplay this help/usage screen.\n"
@@ -143,17 +142,20 @@ void usage()
 	);
 }
 /*
- * Print version information to the screen
+ * Displays version information
 */
 void version()
 {
 	printf(
-		"chmod (stdutils %s)\n"
-		"Copyright (C) 2014 Alan Potteiger\n"
-		"Licensed under the 2-Clause BSD License\n\n"
-		"Written by Alan Potteiger\n"
-		"https://github.com/APott/stdutils\n"
+		"%s (stdutils %s)\n"
+		"Written by %s\n"
+		"Licensed under the 2-Clause BSD License\n"
+		"%s\n"
 		,
-		VERSION
+		UTILITY,
+		VERSION,
+		AUTHORS,
+		HOMEPAGE
 	);
 }
+

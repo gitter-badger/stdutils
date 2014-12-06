@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2014 Alan Potteiger
+ * Written by Alan Potteiger
  *
- * Licensed under the 2 Clause (Free)BSD License
- * License can be found in `LICENSE` in the root directory of this project
- *
+ * Licensed under the 2-Clause BSD License
+ * See LICENSE in the root of the project
+ * 
  * pwd.c - Implementation of the `pwd` utility
- *
+ * 
 */
 #include <stdio.h>
 #include <unistd.h>
@@ -13,11 +13,13 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../version.h"
-void usage();
+#include "../info.h"
+#define AUTHORS "Alan Potteiger"
+#define UTILITY "pwd"
 int pwd(size_t);
+void usage();
 void version();
-/* Under what name the program was execeuted. ex. `pwd`, `bin/pwd` */
+/* Under what name the program was executed */
 static char *called;
 int main(int argc, char *argv[])
 {
@@ -29,21 +31,18 @@ int main(int argc, char *argv[])
 	while ((o = getopt(argc, argv, "?hVLP")) != -1) {
 		switch (o) {
 			case 'L':
-				LP = 0;		
+				LP = 0;
 			break;
 			case 'P':
 				LP++;
 			break;
 			case 'V':
 				version();
-			return 0;
+			return EXIT_SUCCESS;
 			case 'h':
-				usage();
-				return 0;
-			break;
 			case '?':
 				usage();
-			return 0;
+			return EXIT_SUCCESS;
 		}
 	}
 	if (LP > 0) {
@@ -52,10 +51,10 @@ int main(int argc, char *argv[])
 	char *path = getenv("PWD");
 	if (path != NULL) {
 		printf("%s\n", path);
-		return 0;
+		return EXIT_SUCCESS;
 	}
 	fprintf(stderr, "Missing environment variable \"PWD\"");
-	return 1;
+	return EXIT_SUCCESS;
 }
 /*
  * Print working directory (physical path)
@@ -105,12 +104,15 @@ void usage()
 void version()
 {
 	printf(
-		"pwd (stdutils %s)\n"
-		"Copyright (C) 2014 Alan Potteiger\n"
-		"Licensed under the 2-Clause BSD License\n\n"
-		"Written by Alan Potteiger\n"
-		"https://github.com/APott/stdutils\n"
+		"%s (stdutils %s)\n"
+		"Written by %s\n"
+		"Licensed under the 2-Clause BSD License\n"
+		"%s\n"
 		,
-		VERSION
+		UTILITY,
+		VERSION,
+		AUTHORS,
+		HOMEPAGE
 	);
 }
+
