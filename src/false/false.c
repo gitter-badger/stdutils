@@ -4,14 +4,14 @@
  * Licensed under the 2-Clause BSD License
  * See LICENSE in the root of the project
  * 
- * true.c - Implementation of the `true` utility.
+ * false.c - Implements the `false` utility.
  * 
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include "../info.h"
 #define AUTHORS "Planet Earth"
-#define UTILITY "true"
+#define UTILITY "false"
 void usage();
 void version();
 /* Under what name the program was executed */
@@ -24,27 +24,28 @@ int main(int argc, char *argv[])
 		switch (o) {
 			case 'V':
 				version();
-			return EXIT_SUCCESS;
+			break;
 			case 'h':
 			case '?':
 				usage();
-			return EXIT_SUCCESS;
+			break;
 		}
 	}
-	return EXIT_SUCCESS;
+	/* non-zero */
+	return 1;
 }
 /*
- * Print usage of `true` to standard out.
+ * Print usage of `false` to standard out.
 */
 void usage()
 {
 	printf(
-		"Usage: %s [option]\n"
-		"Simply returns true (0).\n"
-		"Following are the two valid options.\n"
-		"\t-?, -h\tDisplay this help/usage page.\n"
-		"\t-V\tDisplay version information.\n"
-		"Written by Planet Earth.\n"
+		"Usage: %s [options]\n"
+		"Returns false (non-zero) successfully, ambitious, but we'll get there eventually.\n"
+		"Following are the options supported.\n"
+		"\t-?, -h\tPrints out a help/usage screen like this.\n"
+		"\t-V\tPrints out version information.\n"
+		"Written by Planet Earth\n"
 		,
 		called
 	);
