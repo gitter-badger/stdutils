@@ -35,6 +35,7 @@ WHAT'S IMPLEMENTED?
     - true
     - false
     - head
+    - sleep
 	
   INCOMPLETE
     - chmod: Symbolic modes not implemented yet. (I'm lazy)
@@ -112,12 +113,10 @@ BUILDING
   likely have installed.
 
 CONTRIBUTING
-    I'm just getting this started so I'm not begging for contributors yet.
-  Although, if you happen to come accross this I would certainly be glad to have
-  any contributions. Just contact me and we'll discuss things. Contact
-  information is at the bottom. I WILL NOT accept any Github pull requests, as I
-  despise this workflow, just shoot me and email and it would make both of our
-  our lives way easier.
+    If you're interested in contributing that would be awesome. Eventually I
+  will accept pull requests but not at this time, still trying to get things
+  in a good state for the future. If you're interested in contributing and
+  helping out with the project in the long term what would be great. 
 
 LICENSE
     stdutils is licensed under the 2-Clause BSD License, terms of this license
