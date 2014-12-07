@@ -46,8 +46,10 @@ void usage()
 		"\t-?, -h\tPrints out a help/usage screen like this.\n"
 		"\t-V\tPrints out version information.\n"
 		"Written by Planet Earth\n"
+		"stdutils homepage <%s>\n"
 		,
-		called
+		called,
+		HOMEPAGE
 	);
 }
 /*

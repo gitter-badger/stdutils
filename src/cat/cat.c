@@ -88,8 +88,10 @@ void usage()
 		"\t-h, -?\tDisplays this help/usage screen.\n"
 		"\t-V\tDisplays version information.\n"
 		"Just \"-\" will read from standard input, Ctrl+D signifies end of file.\n"
+		"stdutils homepage <%s>\n"
 		,
-		called
+		called,
+		HOMEPAGE
 	);
 }
 /*

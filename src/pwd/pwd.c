@@ -94,8 +94,10 @@ void usage()
 		"\t-P\tPhysical path, ignores symlinks.\n"	
 		"\t-h, -?\tDisplay this help/usage screen.\n"
 		"\t-V\tDisplay version information.\n"
+		"stdutils homepage <%s>\n"
 		,
-		called
+		called,
+		HOMEPAGE
 	);
 }
 /*

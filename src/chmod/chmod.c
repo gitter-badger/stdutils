@@ -137,8 +137,10 @@ void usage()
 		"\t-R\tChanges file mode bits (permissions) recursively, all files and directories below.\n"
 		"\t-h, -?\tDisplay this help/usage screen.\n"
 		"\t-V\tDisplay version information.\n"
+		"stdutils homepage <%s>\n"
 		,
-		called
+		called,
+		HOMEPAGE
 	);
 }
 /*
