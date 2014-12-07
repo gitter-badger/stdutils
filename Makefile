@@ -1,5 +1,5 @@
 
-all: pwd cat chmod true false head
+all: pwd cat chmod true false head sleep
 
 pwd: src/pwd/pwd.c
 	$(CC) src/pwd/pwd.c -o bin/pwd
@@ -18,6 +18,9 @@ false: src/false/false.c
 
 head: src/head/head.c
 	$(CC) src/head/head.c -o bin/head
+
+sleep: src/sleep/sleep.c
+	$(CC) src/sleep/sleep.c -o bin/sleep
 
 clean:
 	rm bin/*
