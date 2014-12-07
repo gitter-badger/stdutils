@@ -12,7 +12,7 @@ HOW DO I GET IT?
     Since it's not really ready for use yet (just in the beginnings) there are
   no packages or anything available for download. If you want to test the code
   or hack on it, of course you can clone the git repository at
-  <https//github.com/apott/stdutils>.
+  <https://github.com/apott/stdutils>.
 
     git clone https://github.com/apott/stdutils
 
@@ -110,7 +110,6 @@ BUILDING
   There is no automated installation at this point because the codebase is still
   unstable and it's best not to replace the tried and true GNU coreutils you
   likely have installed.
-
 
 CONTRIBUTING
     I'm just getting this started so I'm not begging for contributors yet.

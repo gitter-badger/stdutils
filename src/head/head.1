@@ -1,0 +1,39 @@
+.TH head 1 "December 2014" "stdutils 0.1.1" "User Command"
+.SH NAME
+head - Print out the first portion of files (including standard input)
+.SH SYNOPSIS
+.B head
+.R [-n
+.I number of lines
+.R ]
+.I files...
+
+.SH DESCRIPTION
+The
+.B head
+.R utility print out the first portion of files to standard output. Using the
+-n option you can specifiy how many lines from the file to print.
+.SH OPTIONS
+There are currently four options supported by this implementation of head:
+.IP -n
+Specifies the number of lines to print from each file, must be a postive integer
+.IP -h
+Print a help/usage screen listing these options.
+.IP -?
+Same as
+.B -h
+.IP -V
+Prints version information.
+.SH EXAMPLES
+.TP
+head \-n 42 README.txt
+Reads and prints the first 42 lines of README.txt to standard output.
+.TP
+head \-n 2 \-
+Reads from standard input and outputs the first two lines read from it.
+.TP
+head \-n 2 LICENSE.txt \- README.txt
+Reads LICENSE.txt, standard input, and README.txt and outputs the first 2 lines
+of each.
+.SH AUTHOR
+Alan Potteiger <alanpotteiger@gmail.com>
