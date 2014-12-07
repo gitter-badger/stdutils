@@ -21,6 +21,7 @@ echo \
 #include <stdio.h>
 #include <stdlib.h>
 #include \"../info.h\"
+#include \"../error.h\"
 #define AUTHORS \"$2\"
 #define UTILITY \"$1\"
 void usage();
@@ -55,6 +56,10 @@ void usage()
 {
 	printf(
 		\"Usage: %s \\\n\"
+
+		\"Following is a list of supported options.\\\n\"
+		\"\\\t-?, -h\\\tDisplays a help/usage screen like this.\\\n\"
+		\"\\\t-V\\\tDisplays version information.\\\t\"
 		,
 		called
 	);
