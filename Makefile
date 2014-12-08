@@ -23,5 +23,6 @@ sleep: src/sleep/sleep.c
 	$(CC) src/sleep/sleep.c -o bin/sleep
 
 clean:
+	mv bin/.gitignore .gitignore
 	rm bin/*
-	echo "This is to keep bin/ tracked" > bin/README
+	mv .gitignore bin/.gitignore

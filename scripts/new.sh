@@ -2,6 +2,9 @@
 # Script to write a template for a new utility by only providing a name (I'm lazy)
 # ./new.sh [UTILITY] [AUTHORS] 
 
+# Add an entry in bin/.gitignore
+echo "$1" >> bin/.gitignore
+
 # New directory for new utility
 mkdir src/$1
 # touch for a manpage later
