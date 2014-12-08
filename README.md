@@ -1,22 +1,22 @@
 # stdutils
 ### WHAT?
-    This is an attempt at writing standard POSIX comformant utilities. Hence
-  std (standard) utils (utilities). The goal is to be as conformant as
-  possible with the POSIX(2008) standards. In the implementation only POSIX
-  or standard library functions should be used (no GNU extensions).
+This is an attempt at writing standard POSIX comformant utilities. Hence
+std (standard) utils (utilities). The goal is to be as conformant as
+possible with the POSIX(2008) standards. In the implementation only POSIX
+or standard library functions should be used (no GNU extensions).
 
 ### WHY?
-    Why not? <insert other reason here I may use down the road>
+Why not? <insert other reason here I may use down the road>
 
 ### HOW DO I GET IT?
-    Since it's not really ready for use yet (just in the beginnings) there are
-  no packages or anything available for download. If you want to test the code
-  or hack on it, of course you can clone the git repository at
-  <https://github.com/apott/stdutils>.
-  ```sh
-    git clone https://github.com/apott/stdutils
-  ```
-  Now you're all set!
+Since it's not really ready for use yet (just in the beginnings) there are
+no packages or anything available for download. If you want to test the code
+or hack on it, of course you can clone the git repository at
+<https://github.com/apott/stdutils>.
+```sh
+git clone https://github.com/apott/stdutils
+```
+Now you're all set!
 
 ### WHAT'S IMPLEMENTED?
     I will be updating this list as I go along, obviously there's not much in
