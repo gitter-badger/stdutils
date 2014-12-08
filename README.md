@@ -1,24 +1,24 @@
-                                   stdutils
-WHAT?
+# stdutils
+### WHAT?
     This is an attempt at writing standard POSIX comformant utilities. Hence
   std (standard) utils (utilities). The goal is to be as conformant as
   possible with the POSIX(2008) standards. In the implementation only POSIX
   or standard library functions should be used (no GNU extensions).
 
-WHY?
+### WHY?
     Why not? <insert other reason here I may use down the road>
 
-HOW DO I GET IT?
+### HOW DO I GET IT?
     Since it's not really ready for use yet (just in the beginnings) there are
   no packages or anything available for download. If you want to test the code
   or hack on it, of course you can clone the git repository at
   <https://github.com/apott/stdutils>.
-
+  ```sh
     git clone https://github.com/apott/stdutils
-
+  ```
   Now you're all set!
 
-WHAT'S IMPLEMENTED?
+### WHAT'S IMPLEMENTED?
     I will be updating this list as I go along, obviously there's not much in
   the beginning but hopefully the list will grow. There are two lists, complete,
   and incomplete. The items in the complete list seem to be up to the POSIX
@@ -40,7 +40,7 @@ WHAT'S IMPLEMENTED?
   INCOMPLETE
     - chmod: Symbolic modes not implemented yet. (I'm lazy)
 
-WHAT SHOULD BE IMPLEMENTED?
+### WHAT SHOULD BE IMPLEMENTED?
     Good question! Obviously not every utility listed by POSIX should be
   implemented in my opinion. Some utilities are obsolete or irrelevant, or are
   too large to be implemented in this package and should be in their own. For a
@@ -52,7 +52,7 @@ WHAT SHOULD BE IMPLEMENTED?
   utilities. Of course, there are some exceptions to this, we'll cross that 
   bridge when it gets here.
 
-DIRECTORY STRUCTURE
+### DIRECTORY STRUCTURE
     Directory structure, nothing to crazy here (hopefully). I'll write out a
   little tree here for you. (Anything with / after it is a directory)
 	
@@ -64,7 +64,7 @@ DIRECTORY STRUCTURE
     LICENSE     License for the project, 2-Clause BSD License to be specific
     README      You're looking at it.
 			
-SOURCE STRUCTURE
+### SOURCE STRUCTURE
     The src/ directory should be kept quite clean, mostly source but there's a
   few exceptions. At the top level of src/ there should only be directories for
   various utilities eg. `pwd/`, some header files or universal code to be used
@@ -72,19 +72,19 @@ SOURCE STRUCTURE
   there should be 2 files (maybe more). First is the source file, eg. `pwd.c`,
   second is a manual page for the utility, eg. `pwd.1`. 
 
-SOURCE CODE
+### SOURCE CODE
     Most code is and should be written in C, no C++, just plain C using only the
   standard C libraries, no GNU extensions (trying to keep this portable). Coding
   style will be enumerated at a later date, really depends who jumps on board
   first, I'm using mine at the moment.
 
-MANUAL PAGES?
+### MANUAL PAGES?
     They're not neccessary quite yet, but should be written eventually. I tend
   to write one (not neccessarily the most thorough) once I believe I've
   completed a utility, helps me review, check whether I've implemented
   everything.
 
-SCRIPTS
+### SCRIPTS
     Currently there are two scripts within scripts/. `new.sh` is a script that
   automates the creation of boiler plate code for a new utility. It creates a
   new directory in src/, a source file including boiler plate code, and an empty
@@ -93,7 +93,7 @@ SCRIPTS
   VERSION macro defined in info.h to the latest information from git. Details on
   these scripts can be seen in scripts/.
 
-BUILDING
+### BUILDING
     To build stdutils all you need is the source, a C compiler that compiles
   standard C and it would be best to have an implementation of `make` installed,
   such as GNU Make.
@@ -112,22 +112,22 @@ BUILDING
   unstable and it's best not to replace the tried and true GNU coreutils you
   likely have installed.
 
-CONTRIBUTING
+### CONTRIBUTING
     If you're interested in contributing that would be awesome. Eventually I
   will accept pull requests but not at this time, still trying to get things
   in a good state for the future. If you're interested in contributing and
   helping out with the project in the long term what would be great. 
 
-LICENSE
+### LICENSE
     stdutils is licensed under the 2-Clause BSD License, terms of this license
   are in the LICENSE file.
 
-CONTACT
+### CONTACT
     If you wish to contact me about contributing or anything else please feel
   free to email me, <alanpotteiger@gmail.com>. I check my email quite frequently
   but I probably won't reply INSTANTLY, but at the very most a day.
 
-WHAT NOW?
+### WHAT NOW?
     Well... I suppose you could check out some of the code, test some, or write
   some of your own and check about contributing? Or you could send me some spam,
   or some hate mail. Once someone sends me hate mail, I know I've really made it
