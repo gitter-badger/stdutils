@@ -54,15 +54,16 @@ bridge when it gets here.
 
 ### Directory Structure
 Directory structure, nothing to crazy here (hopefully). I'll write out a
-little tree here for you. (Anything with / after it is a directory)
+little table here for you. (Anything with / after it is a directory)
 	
-Tree:
-- bin/        Destination for binaries, none should be tracked.
-- scripts/    Contains various scripts to run to make hacking easier.
-- src/        Mainly contains source.
-- Makefile    Makefile to compile the code.
-- LICENSE     License for the project, 2-Clause BSD License to be specific
-- README      You're looking at it.
+| File/Directory | Description
+| -------------- | -------------------------------------------------------
+| bin/			 |	Destination for binaries, none should be tracked.
+| scripts/		 |	Contains various scripts to run to make hacking easier.
+| src/			 |	Mainly contains source.
+| Makefile		 |	Makefile to compile the code.
+| LICENSE		 |	License for the project, 2-Clause BSD License to be specific
+| README		 |	You're looking at it.
 			
 ### Source Stucture
 The src/ directory should be kept quite clean, mostly source but there's a
