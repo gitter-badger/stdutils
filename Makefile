@@ -1,5 +1,5 @@
 
-all: pwd cat chmod true false head sleep more
+all: pwd cat chmod true false head sleep tty
 
 pwd: src/pwd/pwd.c
 	$(CC) src/pwd/pwd.c -o bin/pwd
@@ -21,6 +21,9 @@ head: src/head/head.c
 
 sleep: src/sleep/sleep.c
 	$(CC) src/sleep/sleep.c -o bin/sleep
+
+tty: src/tty/tty.c
+	$(CC) src/tty/tty.c -o bin/tty
 
 clean:
 	mv bin/.gitignore .gitignore

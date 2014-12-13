@@ -1,4 +1,4 @@
-# stdutils
+#<center>stdutils</center>
 ### What?
 This is an attempt at writing standard POSIX comformant utilities. Hence
 std (standard) utils (utilities). The goal is to be as conformant as
@@ -19,26 +19,25 @@ git clone https://github.com/apott/stdutils
 Now you're all set!
 
 ### What's Implemented?
-I will be updating this list as I go along, obviously there's not much in
-the beginning but hopefully the list will grow. There are two lists, complete,
-and incomplete. The items in the complete list seem to be up to the POSIX
-specification in my opinion and in my testing, this of course may not be the
-case, so just email me if that's what you find (info at bottom). The items in
-the incomplete list may just not be complete (not up to the specification) or
-may have bugs, I will list the reason with it. Utilities that have absolutely
-no code are not in either list, the utilities that should be implemented will
-be discussed later.
-	
-Complete:
-- pwd
-- cat
-- true
-- false
-- head
-- sleep
-	
-Incomplete:
-- chmod: Symbolic modes not implemented yet. (I'm lazy)
+I will be updating this list as I go along, obviously there won't be much in the
+beginning. Below is a table describing the status of various utility
+implementations contained in this package. A utility marked "Complete" isn't
+necessarily complete, it just means that from what's readily apparent it seems
+to follow the specification and be doing it's job or come pretty darn close.
+Improvements can always be done. Obviously utilities marked "Incomplete" are
+simply incomplete, either there's a huge feature missing or there's a
+problematic bug. Please contact me if you find these statuses to be incorrect.
+
+| Utility | Status
+| ------- | -----------
+| pwd     | Complete
+| cat     | Complete
+| true    | Complete
+| false   | Complete
+| head    | Complete
+| sleep   | Complete
+| tty     | Complete
+| chmod   | Incomplete
 
 ### What should be implemented?
 Good question! Obviously not every utility listed by POSIX should be

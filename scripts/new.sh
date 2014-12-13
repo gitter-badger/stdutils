@@ -59,13 +59,13 @@ void usage()
 {
 	printf(
 		\"Usage: %s \\\n\"
-
+		\"[Description]\\\n\"
 		\"Following is a list of supported options.\\\n\"
 		\"\\\t-?, -h\\\tDisplays a help/usage screen like this.\\\n\"
-		\"\\\t-V\\\tDisplays version information.\\\t\"
-		"\\\n"
+		\"\\\t-V\\\tDisplays version information.\\\n\"
+		\"stdutils homepage <%s>\\\n\"
 		,
-		called
+		called, HOMEPAGE
 	);
 }
 /*
