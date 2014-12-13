@@ -1,5 +1,5 @@
 
-all: pwd cat chmod true false head sleep
+all: pwd cat chmod true false head sleep more
 
 pwd: src/pwd/pwd.c
 	$(CC) src/pwd/pwd.c -o bin/pwd
