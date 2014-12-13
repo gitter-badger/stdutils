@@ -1,4 +1,4 @@
-#<center>stdutils</center>
+<div style="text-align:center;"><h1>stdutils</h1></div>
 ### What?
 This is an attempt at writing standard POSIX comformant utilities. Hence
 std (standard) utils (utilities). The goal is to be as conformant as
