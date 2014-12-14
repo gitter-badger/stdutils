@@ -1,5 +1,7 @@
 # stdutils
 ### What?
+
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/APott/stdutils?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 This is an attempt at writing standard POSIX comformant utilities. Hence
 std (standard) utils (utilities). The goal is to be as conformant as
 possible with the POSIX(2008) standards. In the implementation only POSIX
