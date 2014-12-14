@@ -39,6 +39,30 @@ commits separate (work in a dozen other files shouldn't be in one commit).
 - [x] sleep
 - [x] tty
 - [ ] chmod
+- [ ] chgrp
+- [ ] chown
+- [ ] cp
+- [ ] date
+- [ ] ed (separate package)
+- [ ] tail
+- [ ] ln
+- [ ] ls
+- [ ] m4 (separate package)
+- [ ] make (separate package)
+- [ ] man (separate package)
+- [ ] mkdir
+- [ ] mkfifo
+- [ ] more
+- [ ] mv
+- [ ] nl
+- [ ] printf
+- [ ] read
+- [ ] rm
+- [ ] rmdir
+- [ ] sh (separate package)
+- [ ] tee
+- [ ] wc
+- [ ] who
 
 
 ### What should be implemented?
