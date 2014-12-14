@@ -20,24 +20,26 @@ Now you're all set!
 
 ### What's Implemented?
 I will be updating this list as I go along, obviously there won't be much in the
-beginning. Below is a table describing the status of various utility
-implementations contained in this package. A utility marked "Complete" isn't
-necessarily complete, it just means that from what's readily apparent it seems
-to follow the specification and be doing it's job or come pretty darn close.
-Improvements can always be done. Obviously utilities marked "Incomplete" are
-simply incomplete, either there's a huge feature missing or there's a
-problematic bug. Please contact me if you find these statuses to be incorrect.
+beginning. Below is a checklist describing the status of various utility
+implementations contained in this package. Utilities with checkmarks appear to
+be complete or up to standards, at least pretty close. Those without a checkmark
+are incomplete or haven't been implemented yet. Utilities that should be
+implemented but have not been implemented yet are added to this list unchecked
+to serve as a TODO list. If one or more of the utilities need improvements or
+implemented feel free to email me or send a pull request, just try to keep
+commits separate (work in a dozen other files shouldn't be in one commit).
 
-| Utility | Status
-| ------- | -------
-| pwd     | [X]
-| cat     | [X]
-| true    | [X]
-| false   | [X]
-| head    | [X]
-| sleep   | [X]
-| tty     | [X]
-| chmod   | [ ]
+#### Utility Checklist
+
+- [x] pwd
+- [x] cat
+- [x] true
+- [x] false
+- [x] head
+- [x] sleep
+- [x] tty
+- [ ] chmod
+
 
 ### What should be implemented?
 Good question! Obviously not every utility listed by POSIX should be
