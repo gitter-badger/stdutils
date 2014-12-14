@@ -1,4 +1,4 @@
-<h1 style="text-align:center;">stdutils</h1>
+# stdutils
 ### What?
 This is an attempt at writing standard POSIX comformant utilities. Hence
 std (standard) utils (utilities). The goal is to be as conformant as
@@ -29,15 +29,15 @@ simply incomplete, either there's a huge feature missing or there's a
 problematic bug. Please contact me if you find these statuses to be incorrect.
 
 | Utility | Status
-| ------- | -----------
-| pwd     | Complete
-| cat     | Complete
-| true    | Complete
-| false   | Complete
-| head    | Complete
-| sleep   | Complete
-| tty     | Complete
-| chmod   | Incomplete
+| ------- | -------
+| pwd     | [X]
+| cat     | [X]
+| true    | [X]
+| false   | [X]
+| head    | [X]
+| sleep   | [X]
+| tty     | [X]
+| chmod   | [ ]
 
 ### What should be implemented?
 Good question! Obviously not every utility listed by POSIX should be
